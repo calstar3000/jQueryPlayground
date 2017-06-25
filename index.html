@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A playground for jQuery.">
+    <title>jQuery Playground</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="css/side-menu-old-ie.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="css/side-menu.css">
+<!--<![endif]-->
+</head>
+<body>
+
+    <div id="layout">
+        <!-- Menu toggle -->
+        <a href="#menu" id="menuLink" class="menu-link">
+            <!-- Hamburger icon -->
+            <span></span>
+        </a>
+
+        <div id="menu">
+            <div class="pure-menu">
+                <a class="pure-menu-heading" href="#">JQP</a>
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item" style="margin-top: 10px;">Attributes</li>
+                    <li class="pure-menu-item"><a href="#addClass" class="pure-menu-link">.addClass()</a></li>
+                    <li class="pure-menu-item"><a href="#attr" class="pure-menu-link">.attr()</a></li>
+                    <li class="pure-menu-item"><a href="#hasClass" class="pure-menu-link">.hasClass()</a></li>
+                    <li class="pure-menu-item"><a href="#html" class="pure-menu-link">.html()</a></li>
+                    <li class="pure-menu-item"><a href="#prop" class="pure-menu-link">.prop()</a></li>
+                    <li class="pure-menu-item"><a href="#removeAttr" class="pure-menu-link">.removeAttr()</a></li>
+                    <li class="pure-menu-item"><a href="#removeClass" class="pure-menu-link">.removeClass()</a></li>
+                    <li class="pure-menu-item"><a href="#toggleClass" class="pure-menu-link">.toggleClass()</a></li>
+                    <li class="pure-menu-item"><a href="#val" class="pure-menu-link">.val()</a></li>
+                    <li class="pure-menu-item">Effects - Basics</li>
+                    <li class="pure-menu-item"><a href="#hide" class="pure-menu-link">.hide()</a></li>
+                    <li class="pure-menu-item"><a href="#show" class="pure-menu-link">.show()</a></li>
+                    <li class="pure-menu-item"><a href="#toggle" class="pure-menu-link">.toggle()</a></li>
+                    <li class="pure-menu-item">Effects - Fading</li>
+                    <li class="pure-menu-item"><a href="#fadeIn" class="pure-menu-link">.fadeIn()</a></li>
+                    <li class="pure-menu-item"><a href="#fadeOut" class="pure-menu-link">.fadeOut()</a></li>
+                    <li class="pure-menu-item"><a href="#fadeTo" class="pure-menu-link">.fadeTo()</a></li>
+                    <li class="pure-menu-item"><a href="#fadeToggle" class="pure-menu-link">.fadeToggle()</a></li>
+                    <li class="pure-menu-item">Effects - Sliding</li>
+                    <li class="pure-menu-item"><a href="#slideUp" class="pure-menu-link">.slideUp()</a></li>
+                    <li class="pure-menu-item"><a href="#slideDown" class="pure-menu-link">.slideDown()</a></li>
+                    <li class="pure-menu-item"><a href="#slideToggle" class="pure-menu-link">.slideToggle()</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="main">
+            <div class="header">
+                <h1>jQuery Playground</h1>
+                <h2>Let's have some fun with jQuery</h2>
+            </div>
+
+            <div class="content">
+
+                <!-- addClass() start -->
+                <h2 id="addClass" class="content-subhead">.addClass(className)</h2>
+                <h3>Description</h3>
+                <p>Add a class to an element.</p>
+                <h3>Code</h3>
+                <pre>$("#btnAddClass").click(function() {
+    $(this).addClass("pure-button-primary");
+});</pre>
+                <h3>Demo</h3>
+                <p>
+                    <button id="btnAddClass" class="pure-button pure-button-active">Click me to add the class 'pure-button-primary'</button>
+                </p>
+                <br />
+                <hr />
+                <!-- addClass() end -->
+
+                <!-- attr() start -->
+                <h2 id="attr" class="content-subhead">.attr(attributeName)</h2>
+                <h3>Description</h3>
+                <p>Get an element's attribute value for a given attribute name.</p>
+                <h3>Code</h3>
+                <pre>$("#btnAttr").click(function() {
+    $("#txtAttr").html($(this).attr("class"));
+});</pre>
+                <h3>Demo</h3>
+                <p>
+                    <button id="btnAttr" class="pure-button pure-button-primary">Click me to get my class</button>
+                    <span>Class: </span><span id="txtAttr"></span>
+                </p>
+                <br />
+                <hr />
+                <!-- attr() end -->
+
+                <!-- hasClass() start -->
+                <h2 id="hasClass" class="content-subhead">.hasClass(className)</h2>
+                <h3>Description</h3>
+                <p>Get whether an element has a given class.</p>
+                <h3>Code</h3>
+                <pre>$("#btnHasClass").click(function() {
+    $("#txtHasClass").html($(this).hasClass("pure-button-primary"));
+});</pre>
+                <h3>Demo</h3>
+                <p>
+                    <button id="btnHasClass" class="pure-button pure-button-primary">Click me to see if I have the class 'pure-button-primary'</button>
+                    <span>Has class: </span><span id="txtHasClass"></span>
+                </p>
+                <br />
+                <hr />
+                <!-- hasClass() end -->
+
+                <!-- html() start -->
+                <h2 id="html" class="content-subhead">.html()</h2>
+                <h3>Description</h3>
+                <p>Update an element's html.</p>
+                <h3>Code</h3>
+                <pre>$("#btnHtml").click(function() {
+    $(this).html("Updated!");
+});</pre>
+                <h3>Demo</h3>
+                <p>
+                    <button id="btnHtml" class="pure-button pure-button-primary">Click me to update my html</button>
+                </p>
+                <br />
+                <hr />
+                <!-- html() end -->
+
+                <!-- prop() start -->
+                <h2 id="prop" class="content-subhead">.prop(propertyName, propertyValue)</h2>
+                <h3>Description</h3>
+                <p>Update a property on an element.</p>
+                <h3>Code</h3>
+                <pre>$("#btnProp").click(function() {
+    $("#chkProp").prop("checked", true);
+});</pre>
+                <h3>Demo</h3>
+                <p>
+                    <button id="btnProp" class="pure-button pure-button-primary">Click me to check the box</button>
+                    <label for="chkProp" class="pure-checkbox">
+                        <input id="chkProp" type="checkbox"> Checkbox
+                    </label>
+                </p>
+                <br />
+                <hr />
+                <!-- prop() end -->
+
+                <!-- removeAttr() start -->
+                <h2 id="removeAttr" class="content-subhead">.removeAttr(attributeName)</h2>
+                <h3>Description</h3>
+                <p>Remove an attribute from an element.</p>
+                <h3>Code</h3>
+                <pre>$("#btnRemoveAttr").click(function() {
+    $(this).removeAttr("style");
+});</pre>
+                <h3>Demo</h3>
+                <p>
+                    <button id="btnRemoveAttr" class="pure-button pure-button-primary" style="box-shadow: 10px 10px 5px #888888;">Click me to remove my style attribute</button>
+                </p>
+                <br />
+                <hr />
+                <!-- removeAttr() start -->
+
+                <!-- removeClass() start -->
+                <h2 id="removeClass" class="content-subhead">.removeClass(className)</h2>
+                <h3>Description</h3>
+                <p>Remove class from an element.</p>
+                <h3>Code</h3>
+                <pre>$("#btnRemoveClass").click(function() {
+    $(this).removeClass("pure-button-primary");
+});</pre>
+                <h3>Demo</h3>
+                <p>
+                    <button id="btnRemoveClass" class="pure-button pure-button-primary">Click me to remove the class 'pure-button-primary'</button>
+                </p>
+                <br />
+                <hr />
+                <!-- removeClass() end -->
+
+                <!-- toggleClass() start -->
+                <h2 id="toggleClass" class="content-subhead">.toggleClass(className)</h2>
+                <h3>Description</h3>
+                <p>Toggle the class of an element (if it has the class, remove it; otherwise add it).</p>
+                <h3>Code</h3>
+                <pre>$("#btnToggleClass").click(function() {
+    $(this).toggleClass("pure-button-primary");
+});</pre>
+                <h3>Demo</h3>
+                <p>
+                    <button id="btnToggleClass" class="pure-button pure-button-active">Click me to toggle the class 'pure-button-primary'</button>
+                </p>
+                <br />
+                <hr />
+                <!-- toggleClass() end -->
+
+                <!-- val() start -->
+                <h2 id="val" class="content-subhead">.val()</h2>
+                <h3>Description</h3>
+                <p>Get the value of an element.</p>
+                <h3>Code</h3>
+                <pre>$("#txtVal").html($("#selectVal").val());
+$("#selectVal").change(function() {
+    $("#txtVal").html($("#selectVal").val());
+});</pre>
+                <h3>Demo</h3>
+                <div>
+                    <select id="selectVal">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                    <p>Selected value: <span id="txtVal"></span></p>
+                </div>
+                
+                <br />
+                <hr />
+                <!-- val() end -->
+
+                <!-- hide() start -->
+                <h2 id="hide" class="content-subhead">.hide(options)</h2>
+                <h3>Description</h3>
+                <p>Hide an element.</p>
+                <h3>Code</h3>
+                <pre>$("#btnHide").click(function() {
+    $("#pnlHide").hide({
+        duration: 1000, // Length of animation
+        easing: "linear", // Easing function for animation
+        complete: function() {
+            console.log("hide() finished!");
+        } // Function to call once animation is complete
+    });
+});</pre>
+                <h3>Demo</h3>
+                <div>
+                    <button id="btnHide" class="pure-button pure-button-primary">Click me to hide the box</button>
+                    <span id="pnlHide" style="display: inline-block; width: 150px; height: 28px; text-align: center; border: 1px solid red; color: red;">Box</span>
+                </div>
+                
+                <br />
+                <hr />
+                <!-- hide() end -->
+
+                <!-- show() start -->
+                <h2 id="show" class="content-subhead">.show(options)</h2>
+                <h3>Description</h3>
+                <p>Show an element.</p>
+                <h3>Code</h3>
+                <pre>$("#btnShow").click(function() {
+    $("#pnlShow").show({
+        duration: 1000, // Length of animation
+        easing: "linear", // Easing function for animation
+        complete: function() {
+            console.log("show() finished!");
+        } // Function to call once animation is complete
+    });
+});</pre>
+                <h3>Demo</h3>
+                <div>
+                    <button id="btnShow" class="pure-button pure-button-primary">Click me to show the box</button>
+                    <span id="pnlShow" style="display: inline-block; width: 150px; height: 28px; text-align: center; border: 1px solid red; color: red;">Box</span>
+                </div>
+                
+                <br />
+                <hr />
+                <!-- show() end -->
+
+                <!-- toggle() start -->
+                <h2 id="toggle" class="content-subhead">.toggle(options)</h2>
+                <h3>Description</h3>
+                <p>Toggle showing and hiding an element.</p>
+                <h3>Code</h3>
+                <pre>$("#btnToggle").click(function() {
+    $("#pnlToggle").toggle({
+        duration: 1000, // Length of animation
+        easing: "linear", // Easing function for animation
+        complete: function() {
+            console.log("toggle() finished!");
+        } // Function to call once animation is complete
+    });
+});</pre>
+                <h3>Demo</h3>
+                <div>
+                    <button id="btnToggle" class="pure-button pure-button-primary">Click me to toggle the box</button>
+                    <span id="pnlToggle" style="display: inline-block; width: 150px; height: 28px; text-align: center; border: 1px solid red; color: red;">Box</span>
+                </div>
+                
+                <br />
+                <hr />
+                <!-- toggle() end -->
+
+                <!-- fadeIn() start -->
+                <h2 id="fadeIn" class="content-subhead">.fadeIn(options)</h2>
+                <h3>Description</h3>
+                <p>Display an element by fading it in to be opaque.</p>
+                <h3>Code</h3>
+                <pre>$("#btnFadeIn").click(function() {
+    $("#pnlFadeIn").fadeIn({
+        duration: 1000, // Length of animation
+        easing: "linear", // Easing function for animation
+        complete: function() {
+            console.log("fadeIn() finished!");
+        } // Function to call once animation is complete
+    });
+});</pre>
+                <h3>Demo</h3>
+                <div>
+                    <button id="btnFadeIn" class="pure-button pure-button-primary">Click me to fade in the box</button>
+                    <span id="pnlFadeIn" style="display: inline-block; width: 150px; height: 28px; text-align: center; border: 1px solid red; color: red;">Box</span>
+                </div>
+                
+                <br />
+                <hr />
+                <!-- fadeIn() end -->
+
+                <!-- fadeOut() start -->
+                <h2 id="fadeOut" class="content-subhead">.fadeOut(options)</h2>
+                <h3>Description</h3>
+                <p>Hide an element by fading it out to be transparent.</p>
+                <h3>Code</h3>
+                <pre>$("#btnFadeOut").click(function() {
+    $("#pnlFadeOut").fadeOut({
+        duration: 1000, // Length of animation
+        easing: "linear", // Easing function for animation
+        complete: function() {
+            console.log("fadeOut() finished!");
+        } // Function to call once animation is complete
+    });
+});</pre>
+                <h3>Demo</h3>
+                <div>
+                    <button id="btnFadeOut" class="pure-button pure-button-primary">Click me to fade out the box</button>
+                    <span id="pnlFadeOut" style="display: inline-block; width: 150px; height: 28px; text-align: center; border: 1px solid red; color: red;">Box</span>
+                </div>
+                
+                <br />
+                <hr />
+                <!-- fadeOut() end -->
+
+                <!-- fadeTo() start -->
+                <h2 id="fadeTo" class="content-subhead">.fadeTo(duraction, opacity, easing, complete)</h2>
+                <h3>Description</h3>
+                <p>Adjust the opacity of an element.</p>
+                <h3>Code</h3>
+                <pre>$("#btnFadeTo").click(function() {
+    $("#pnlFadeTo").fadeTo(
+        1000, // Length of animation
+        0.2, // Opacity to fade to
+        "linear", // Easing function for animation
+        function() {
+            console.log("fadeTo() finished!");
+        } // Function to call once animation is complete
+    );
+});</pre>
+                <h3>Demo</h3>
+                <div>
+                    <button id="btnFadeTo" class="pure-button pure-button-primary">Click me to fade the box to semi-transparent</button>
+                    <span id="pnlFadeTo" style="display: inline-block; width: 150px; height: 28px; text-align: center; border: 1px solid red; color: red;">Box</span>
+                </div>
+                
+                <br />
+                <hr />
+                <!-- fadeTo() end -->
+
+                <!-- fadeToggle() start -->
+                <h2 id="fadeToggle" class="content-subhead">.fadeToggle(options)</h2>
+                <h3>Description</h3>
+                <p>Fade an element in and out.</p>
+                <h3>Code</h3>
+                <pre>$("#btnFadeToggle").click(function() {
+    $("#pnlFadeToggle").fadeToggle({
+        duration: 1000, // Length of animation
+        easing: "linear", // Easing function for animation
+        complete: function() {
+            console.log("fadeToggle() finished!");
+        } // Function to call once animation is complete
+    });
+});</pre>
+                <h3>Demo</h3>
+                <div>
+                    <button id="btnFadeToggle" class="pure-button pure-button-primary">Click me to fade the box in and out</button>
+                    <span id="pnlFadeToggle" style="display: inline-block; width: 150px; height: 28px; text-align: center; border: 1px solid red; color: red;">Box</span>
+                </div>
+                
+                <br />
+                <hr />
+                <!-- fadeToggle() end -->
+
+                <!-- slideUp() start -->
+                <h2 id="slideUp" class="content-subhead">.slideUp(options)</h2>
+                <h3>Description</h3>
+                <p>Hide an element by animating it to slide up from the top.</p>
+                <h3>Code</h3>
+                <pre>$("#btnSlideUp").click(function() {
+    $("#pnlSlideUp").slideUp({
+        duration: 1000, // Length of animation
+        easing: "linear", // Easing function for animation
+        complete: function() {
+            console.log("slideUp() finished!");
+        } // Function to call once animation is complete
+    });
+});</pre>
+                <h3>Demo</h3>
+                <div>
+                    <button id="btnSlideUp" class="pure-button pure-button-primary">Click me to slide up the box</button>
+                    <span id="pnlSlideUp" style="display: inline-block; width: 150px; height: 28px; text-align: center; border: 1px solid red; color: red;">Box</span>
+                </div>
+                
+                <br />
+                <hr />
+                <!-- slideUp() end -->
+
+                <!-- slideDown() start -->
+                <h2 id="slideDown" class="content-subhead">.slideDown(options)</h2>
+                <h3>Description</h3>
+                <p>Display an element by animating it to slide down from the top.</p>
+                <h3>Code</h3>
+                <pre>$("#btnSlideDown").click(function() {
+    $("#pnlSlideDown").slideDown({
+        duration: 1000, // Length of animation
+        easing: "linear", // Easing function for animation
+        complete: function() {
+            console.log("slideDown() finished!");
+        } // Function to call once animation is complete
+    });
+});</pre>
+                <h3>Demo</h3>
+                <div>
+                    <button id="btnSlideDown" class="pure-button pure-button-primary">Click me to slide down the box</button>
+                    <span id="pnlSlideDown" style="display: inline-block; width: 150px; height: 28px; text-align: center; border: 1px solid red; color: red;">Box</span>
+                </div>
+                
+                <br />
+                <hr />
+                <!-- slideDown() end -->
+
+                <!-- slideToggle() start -->
+                <h2 id="slideToggle" class="content-subhead">.slideToggle(options)</h2>
+                <h3>Description</h3>
+                <p>Show and hide an element by animating it to slide up and down from the top.</p>
+                <h3>Code</h3>
+                <pre>$("#btnSlideToggle").click(function() {
+    $("#pnlSlideToggle").slideToggle({
+        duration: 1000, // Length of animation
+        easing: "linear", // Easing function for animation
+        complete: function() {
+            console.log("slideToggle() finished!");
+        } // Function to call once animation is complete
+    });
+});</pre>
+                <h3>Demo</h3>
+                <div>
+                    <button id="btnSlideToggle" class="pure-button pure-button-primary">Click me to slide up and down the box</button>
+                    <span id="pnlSlideToggle" style="display: inline-block; width: 150px; height: 28px; text-align: center; border: 1px solid red; color: red;">Box</span>
+                </div>
+                
+                <br />
+                <hr />
+                <!-- slideToggle() end -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts start -->
+    <script src="js/ui.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            // addClass()
+            $("#btnAddClass").click(function() {
+                $(this).addClass("pure-button-primary");
+            });
+
+            // attr()
+            $("#btnAttr").click(function() {
+                $("#txtAttr").html($(this).attr("class"));
+            });
+
+            // hasClass()
+            $("#btnHasClass").click(function() {
+                $("#txtHasClass").html($(this).hasClass("pure-button-primary"));
+            });
+
+            // html()
+            $("#btnHtml").click(function() {
+                $(this).html("Updated!");
+            });
+
+            // prop()
+            $("#btnProp").click(function() {
+                $("#chkProp").prop("checked", true);
+            });
+
+            // removeAttr()
+            $("#btnRemoveAttr").click(function() {
+                $(this).removeAttr("style");
+            });
+
+            // removeClass()
+            $("#btnRemoveClass").click(function() {
+                $(this).removeClass("pure-button-primary");
+            });
+
+            // toggleClass()
+            $("#btnToggleClass").click(function() {
+                $(this).toggleClass("pure-button-primary");
+            });
+
+            // val()
+            $("#txtVal").html($("#selectVal").val());
+            $("#selectVal").change(function() {
+                $("#txtVal").html($("#selectVal").val());
+            });
+
+            // hide()
+            $("#btnHide").click(function() {
+                $("#pnlHide").hide({
+                    duration: 1000, // Length of animation
+                    easing: "linear", // Easing function for animation
+                    complete: function() {
+                        console.log("hide() finished!");
+                    } // Function to call once animation is complete
+                });
+            });
+
+            // show()
+            $("#pnlShow").hide();
+            $("#btnShow").click(function() {
+                $("#pnlShow").show({
+                    duration: 1000, // Length of animation
+                    easing: "linear", // Easing function for animation
+                    complete: function() {
+                        console.log("show() finished!");
+                    } // Function to call once animation is complete
+                });
+            });
+
+            // toggle()
+            $("#btnToggle").click(function() {
+                $("#pnlToggle").toggle({
+                    duration: 1000, // Length of animation
+                    easing: "linear", // Easing function for animation
+                    complete: function() {
+                        console.log("toggle() finished!");
+                    } // Function to call once animation is complete
+                });
+            });
+
+            // fadeIn()
+            $("#pnlFadeIn").hide();
+            $("#btnFadeIn").click(function() {
+                $("#pnlFadeIn").fadeIn({
+                    duration: 1000, // Length of animation
+                    easing: "linear", // Easing function for animation
+                    complete: function() {
+                        console.log("fadeIn() finished!");
+                    } // Function to call once animation is complete
+                });
+            });
+
+            // fadeOut()
+            $("#btnFadeOut").click(function() {
+                $("#pnlFadeOut").fadeOut({
+                    duration: 1000, // Length of animation
+                    easing: "linear", // Easing function for animation
+                    complete: function() {
+                        console.log("fadeOut() finished!");
+                    } // Function to call once animation is complete
+                });
+            });
+
+            // fadeTo()
+            $("#btnFadeTo").click(function() {
+                $("#pnlFadeTo").fadeTo(
+                    1000, // Length of animation
+                    0.2, // Opacity to fade to
+                    "linear", // Easing function for animation
+                    function() {
+                        console.log("fadeTo() finished!");
+                    } // Function to call once animation is complete
+                );
+            });
+
+            // fadeToggle()
+            $("#btnFadeToggle").click(function() {
+                $("#pnlFadeToggle").fadeToggle({
+                    duration: 1000, // Length of animation
+                    easing: "linear", // Easing function for animation
+                    complete: function() {
+                        console.log("fadeToggle() finished!");
+                    } // Function to call once animation is complete
+                });
+            });
+
+            // slideUp()
+            $("#btnSlideUp").click(function() {
+                $("#pnlSlideUp").slideUp({
+                    duration: 1000, // Length of animation
+                    easing: "linear", // Easing function for animation
+                    complete: function() {
+                        console.log("slideUp() finished!");
+                    } // Function to call once animation is complete
+                });
+            });
+
+            // slideDown()
+            $("#pnlSlideDown").hide();
+            $("#btnSlideDown").click(function() {
+                $("#pnlSlideDown").slideDown({
+                    duration: 1000, // Length of animation
+                    easing: "linear", // Easing function for animation
+                    complete: function() {
+                        console.log("slideDown() finished!");
+                    } // Function to call once animation is complete
+                });
+            });
+
+            // slideToggle()
+            $("#btnSlideToggle").click(function() {
+                $("#pnlSlideToggle").slideToggle({
+                    duration: 1000, // Length of animation
+                    easing: "linear", // Easing function for animation
+                    complete: function() {
+                        console.log("slideToggle() finished!");
+                    } // Function to call once animation is complete
+                });
+            });
+
+        });
+    </script>
+    <!-- Scripts end -->
+
+</body>
+</html>
